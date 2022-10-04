@@ -10,7 +10,7 @@
     <link href="css/styles.css" rel="stylesheet" />
     <title>Sidebar Menu</title>
 
-     <style>
+     <!-- <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@500&display=swap');
  *{
     padding: 0;
@@ -128,7 +128,7 @@ td {
     font-size: 13px;
     left: 30px;
 }
-    </style> 
+    </style>  -->
      <!--css devi  -->
 </head>
 <body>
