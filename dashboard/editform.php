@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include 'conn.php';
 $id = $_GET['id'];
 $sql = "SELECT * FROM keterlambatan WHERE id = '$id'";
@@ -179,7 +180,7 @@ if(!isset($_SESSION["login"])){
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="namaSiswa" value="<?= $value['namaSiswa']?>">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nama" value="<?= $value['nama']?>">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Kelas</label>
@@ -205,7 +206,7 @@ if(!isset($_SESSION["login"])){
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Alasan Keterlambatan</label>
                             <br>
-                            <textarea name="alasanKeterlambatan" id="alasanKeterlambatan" cols="30" rows="6"><?= $value['keterangan'];?> </textarea>
+                            <textarea name="alasanKeterlambatan" id="alasanKeterlambatan" cols="30" rows="6"><?= $value['alasanKeterlambatan'];?> </textarea>
                         </div>                         
                         <button type="submit" class="btn btn-primary" name="submit" >Tambahkan</button>
                     </form>

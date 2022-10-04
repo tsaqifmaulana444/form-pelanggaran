@@ -44,7 +44,7 @@
                             <p class="lead text-white-50 mb-4">Website resmi dari SMK Taruna Bhakti untuk pengajuan keterlambatan dan tata tertib di sekolah</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                 <a class="btn btn-dark btn-lg px-4 me-sm-3" href="#fff">Formulir Laporan</a>
-                                <a class="btn btn-outline-light btn-lg px-4" href="#!">Daftar Peraturan</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="datapel.php">Daftar Peraturan</a>
                             </div>
                         </div>
                     </div>

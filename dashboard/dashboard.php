@@ -201,12 +201,12 @@ if(!isset($_SESSION["login"])){
                             <tr>
                                 <td>$i</td>
                                 <td>$value[id]</td>
-                                <td>$value[namaSiswa]</td>
+                                <td>$value[nama]</td>
                                 <td>$value[kelas]</td>
                                 <td>$value[NISN]</td>
                                 <td>$value[menitKeterlambatan]</td>
                                 <td>$value[guruBk]</td>
-                                <td>$value[keterangan]</td>  
+                                <td>$value[alasanKeterlambatan]</td>  
                                 <td>
                                     <a href='editform.php?id=".$value['id']."' style='color: #fff;'> <button type='button' class='btn btn-success'>Edit</button></a>
                                     <a href='delete.php?id=".$value['id']."' style='color: #fff;'> <button type='button' class='btn btn-danger'>Delete</button></a>

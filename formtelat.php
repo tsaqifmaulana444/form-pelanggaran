@@ -39,22 +39,22 @@
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
-                        <form action="savecreate.php" method="post" enctype="multipart/form-data">
+                        <form action="savecreate.php" method="post" enctype="multipart/form-data" style="position: relative; left: -28%;">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="namaSiswa">
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="namaSiswa" style="width: 160%;">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Kelas</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" name="kelas">
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="kelas" style="width: 160%;">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">NISN</label>
-                                <input type="number" class="form-control" id="exampleInputPassword1" name="nisn">
+                                <input type="number" class="form-control" id="exampleInputPassword1" name="nisn" style="width: 160%;">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Jam Keterlambatan</label>
-                                <input type="time" class="form-control" id="exampleInputPassword1" name="menitKeterlambatan">
+                                <input type="time" class="form-control" id="exampleInputPassword1" name="menitKeterlambatan" style="width: 160%;">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Guru BK Yang Menangani</label>
@@ -67,7 +67,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Alasan Keterlambatan</label><br>
-                                <textarea name="alasanKeterlambatan" id="alasanKeterlambatan" cols="30" rows="6"></textarea>
+                                <textarea name="alasanKeterlambatan" id="alasanKeterlambatan" cols="45" rows="6"></textarea>
                             </div>
                             
                             <button type="submit" class="btn btn-success" name="submit">Tambahkan</button>

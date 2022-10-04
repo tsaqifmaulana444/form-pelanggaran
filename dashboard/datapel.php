@@ -141,9 +141,9 @@ td {
     <div class="sidebar">
         <header>Starbhak Services</header>
     <ul>
-        <li><a href="index.php"><i class="fas fa-qrcode"></i>Home</a></li>
-        <li><a href="formtelat.php"><i class="fas fa-sliders-h"></i>Form Keterlambatan</a></li>
-        <li><a href=""><i class="far fa-envelope"></i>Daftar Pelanggaran</a></li>
+        <li><a href="#"><i class="fas fa-qrcode"></i>Home</a></li>
+        <li><a href="#"><i class="fas fa-sliders-h"></i>Form Keterlambatan</a></li>
+        <li><a href="#"><i class="far fa-envelope"></i>Daftar Pelanggaran</a></li>
     </ul>
     </div>
     <section></section>
