@@ -12,6 +12,11 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            body{
+                overflow-x: hidden;
+            }
+        </style>
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -47,26 +52,34 @@
             </div>
         </header>
         <!-- Features section-->
-        <section class="py-5 border-bottom" id="features">
-            <div class="container px-5 my-5">
+        <section class="py-5 border-bottom" id="features" >
+            <div class="container px-5 my-5" style="display: flex;">
+                <div class="const" style="width: 60%;">
+                    <h1 class="display-5 fw-bold text-dark mb-2" style="width: 70%;">Tujuan website ini didirikan</h1>
+                    <p class="lead text-dark-50 mb-4">Starbhak Services adalah website resmi sekolah SMK Taruna Bhakti, Website ini didirikan untuk membuat tata tertib di sekolah SMK Taruna Bhakti dapat terwujudkan dan terlaksana dengan baik. Website ini dirancang dan dibuat oleh Kelas XI PPLG 1 angkatan tahun 2024, Website ini memiliki fitur laporan keterlambatan dan seluruh peraturan yang berlaku di SMK Taruna Bhakti </p>
+                </div>
+                <div class="image" style="width: 42%; height: 27%; margin-left:5%; margin-top:6.5%">
+                    <img src="mm-jalanjalan.jpg" alt="" style="width:100%">
+                    <p class="text-dark fs-6">Siswa SMK Taruna Bhakti</p>
+                </div>
+            
                
             </div>
         </section>
         <!-- Pricing section-->
         <section class="bg-light py-5 border-bottom">
-            <div class="container px-5 my-5">
-               
-            </div>
-        </section>
-        <!-- Testimonials section-->
-        <section class="py-5 border-bottom">
-            <div class="container px-5 my-5 px-5">
-               
-            </div>
-        </section>
-        <!-- Contact section-->
-        <section class="bg-light py-5">
-           
+            <div class="container px-5 my-5" style="display:flex; justify-content: space-between;">
+                <div class="image" style="width: 37%; height: 37%;">
+                    <img src="lapangantb.png" alt="" style="width:100%">
+                    <p class="text-dark fs-6">Siswa SMK Taruna Bhakti</p>
+                </div>
+                <div class="p" style="width: 47%;">
+                    <h1 class="display-5 fw-bold text-dark mb-2" style="width: 100%;;">Ajukan keterlambatan mu</h1> 
+                    <p class="lead text-dark-50 mb-4">Berikut ini adalah tombol yang menuju ke halaman pengajuan keterlambatan siswa SMK Taruna Bhakti</p>
+                    <a class="btn btn-outline-dark btn-lg px-4" href="#!" style="position: relative ; margin-top:7%;">Halaman Peraturan</a>
+                </div>
+
+            
             </div>
         </section>
         <!-- Footer-->
