@@ -43,7 +43,7 @@
                             <h1 class="display-5 fw-bolder text-white mb-2">Selamat datang di Starbhak Services!</h1>
                             <p class="lead text-white-50 mb-4">Website resmi dari SMK Taruna Bhakti untuk pengajuan keterlambatan dan tata tertib di sekolah</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                                <a class="btn btn-dark btn-lg px-4 me-sm-3" href="#features">Get Started</a>
+                                <a class="btn btn-dark btn-lg px-4 me-sm-3" href="#fff">Formulir Laporan</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="#!">Daftar Peraturan</a>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
         <section class="py-5 border-bottom" id="features" >
             <div class="container px-5 my-5" style="display: flex;">
                 <div class="const" style="width: 60%;">
-                    <h1 class="display-5 fw-bold text-dark mb-2" style="width: 70%;">Tujuan website ini didirikan</h1>
+                    <h1 class="display-5 fw-bold text-dark mb-2" style="width: 70%;">Mengapa website ini didirikan?</h1>
                     <p class="lead text-dark-50 mb-4">Starbhak Services adalah website resmi sekolah SMK Taruna Bhakti, Website ini didirikan untuk membuat tata tertib di sekolah SMK Taruna Bhakti dapat terwujudkan dan terlaksana dengan baik. Website ini dirancang dan dibuat oleh Kelas XI PPLG 1 angkatan tahun 2024, Website ini memiliki fitur laporan keterlambatan dan seluruh peraturan yang berlaku di SMK Taruna Bhakti </p>
                 </div>
                 <div class="image" style="width: 42%; height: 27%; margin-left:5%; margin-top:6.5%">
@@ -67,7 +67,7 @@
             </div>
         </section>
         <!-- Pricing section-->
-        <section class="bg-light py-5 border-bottom">
+        <section class="bg-light py-5 border-bottom" id="fff">
             <div class="container px-5 my-5" style="display:flex; justify-content: space-between;">
                 <div class="image" style="width: 37%; height: 37%;">
                     <img src="lapangantb.png" alt="" style="width:100%">
@@ -76,7 +76,7 @@
                 <div class="p" style="width: 47%;">
                     <h1 class="display-5 fw-bold text-dark mb-2" style="width: 100%;;">Ajukan keterlambatan mu</h1> 
                     <p class="lead text-dark-50 mb-4">Berikut ini adalah tombol yang menuju ke halaman pengajuan keterlambatan siswa SMK Taruna Bhakti</p>
-                    <a class="btn btn-outline-dark btn-lg px-4" href="#!" style="position: relative ; margin-top:7%;">Halaman Peraturan</a>
+                    <a class="btn btn-outline-dark btn-lg px-4" href="formtelat.php" style="position: relative ; margin-top:7%;">Ajukan Keterlambatan</a>
                 </div>
 
             
