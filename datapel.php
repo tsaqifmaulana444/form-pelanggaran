@@ -7,12 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylebar.css">
+    <link href="css/styles.css" rel="stylesheet" />
     <title>Sidebar Menu</title>
 
-    <style>
+     <!-- <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@500&display=swap');
-*{
+ *{
     padding: 0;
     margin: 0;
     list-style: none;
@@ -114,10 +114,11 @@ label #cancel{
     left: 500px;
     top: 400px;
     width: 100%;
+    border-radius:15px;
 }
 
 .content th{
-    background-color: #06283D;
+    background-color: #0275d8;
     color: white;
     height: 30px;
     font-family: 'Roboto', sans-serif;
@@ -127,12 +128,26 @@ td {
     font-size: 13px;
     left: 30px;
 }
-    </style>
+    </style>  -->
+     <!--css devi  -->
 </head>
-
-
 <body>
-    <input type="checkbox" id="check">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#!">Starbhak Services</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Log in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- body devi -->
+     <!-- <input type="checkbox" id="check">
         <label for="check">
                 <i class="fas fa-bars" id="btn"></i>
                 <i class="fas fa-times" id="cancel"></i>
@@ -145,10 +160,11 @@ td {
         <li><a href="formtelat.php"><i class="fas fa-sliders-h"></i>Form Keterlambatan</a></li>
         <li><a href=""><i class="far fa-envelope"></i>Daftar Pelanggaran</a></li>
     </ul>
-    </div>
-    <section></section>
+    </div> 
+    <section></section> -->
 
-        <div class="content">
+    <!-- content devi -->
+        <!-- <div class="content">
             <table border="1" cellspacing="0">
                 <tr>
                     <th>No.</th>
@@ -160,6 +176,39 @@ td {
                     <td>Rizki A.</td>
                     <td>Tidur dikelas / 50</td>
                 </tr>
-        </div>
+        </div> -->
+
+        <table class="table table-striped" style="margin-top:10%; width:81%; margin-left:9.5%; ">
+  <thead>
+    <tr class="table-secondary">
+      <th scope="col">No</th>
+      <th scope="col">Nama Pelanggaran</th>
+      <th scope="col">Point</th>
+   
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+ <!-- Footer-->
+    <footer class="py-5 bg-dark " style="margin-top:10%;">
+        <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; SMK Taruna Bhakti 2022</p></div>
+     </footer>
 </body>
 </html>
