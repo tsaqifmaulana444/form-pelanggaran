@@ -18,7 +18,7 @@
 .container{
     background: radial-gradient(circle at top left , #5012c4, #72FFFF);  
     width: 100%;
-    height: 600px;
+    height: 780px;
     padding-right:5% ;
 
 }
