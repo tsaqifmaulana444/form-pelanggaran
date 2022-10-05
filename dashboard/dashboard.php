@@ -184,12 +184,10 @@ if(!isset($_SESSION["login"])){
                                     <th scope="col">Waktu Keterlambatan</th>
                                     <th scope="col">Guru Bk Siswa</th>
                                     <th scope="col">Alasan Keterlambatan</th>
+                                    <th scope="col">Total</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
-                           
-                                   
-                              
                             <tbody>
                             <?php 
                             $i = 1;
@@ -207,6 +205,7 @@ if(!isset($_SESSION["login"])){
                                 <td>$value[menitKeterlambatan]</td>
                                 <td>$value[guruBk]</td>
                                 <td>$value[alasanKeterlambatan]</td>  
+                                <td>$value[total]</td>  
                                 <td>
                                     <a href='editform.php?id=".$value['id']."' style='color: #fff;'> <button type='button' class='btn btn-success'>Edit</button></a>
                                     <a href='delete.php?id=".$value['id']."' style='color: #fff;'> <button type='button' class='btn btn-danger'>Delete</button></a>

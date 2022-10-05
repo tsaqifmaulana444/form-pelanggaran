@@ -1,26 +1,26 @@
 <?php 
 session_start();
 
-if(isset($_SESSION["login"])){
-    header("Location: dashboard.php");
-    exit;
-}
+// if(isset($_SESSION["login"])){
+//     header("Location: index2.php");
+//     exit;
+// }
 
 require 'function.php';
 require 'conn.php';
 
 if(isset($_POST["login"])){
-    $username = $_POST["username"];
+    $nama = $_POST["username"];
     $password = $_POST["password"];
 
-    $result = mysqli_query($conn, "SELECT * FROM admindb WHERE username = '$username'");
+    $result = mysqli_query($conn, "SELECT * FROM profil WHERE nama = '$nama'");
 
     if(mysqli_num_rows($result) === 1){
         $row = mysqli_fetch_array($result);
         if (password_verify($password, $row["password"])){
             // set session
             $_SESSION["login"] = true;
-            header("Location: dashboard.php");
+            header("Location: index2.php?id=$row[0]");
             exit;
         }
 
@@ -39,20 +39,16 @@ if(isset($_POST["login"])){
     <!-- link font -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-
        * {
     margin: 0;
     padding: 0;
     font-family: 'Quicksand', sans-serif;
 }
-body{
-    background-color: #eef1ff;
-}
 .login{
     width: 400px;
-    background-color: #d2daff;
     height: 500px;
     border-radius: 15px;
+    background-color: rgb(201, 200, 200);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -86,9 +82,8 @@ input{
     padding-top: 45px;
 }
 button{
-    margin-top: 30px;
-    background-color: #b1b2ff;
-    cursor: pointer;
+    margin-top: 20px;
+    background-color: #434CE7;
     color: white ;
     align-items: center;
     width: 100px;
@@ -112,21 +107,21 @@ button{
                 <div class="garis"></div>
             </div>
             <div class="heading">
-                <h4>Admin Dashboard</h4>
+                <h4>Welcome!</h4>
                 <h1>Login</h1>
-                <h5 style="margin-top: 5px;">Doesn't Have Permit? <a href="signinpageuser.php">Sign In</a> <br></h5>
+                <h5 style="margin-top: 5px;">Doesn't Have Account? <a href="signinpage.php">Sign In</a> <br></h5>
             </div>
             <?php if(isset($error)) :?>
                 <h2 style="color:red; position:absolute; top:72%; left:44%;">wrong password!</h2>
             <?php endif;?>
             <div class="input-data">
-                <td><input type="text" name="username" placeholder="username" id="username"></td>
+                <td><input type="text" name="username" placeholder="Name" id="username"></td>
                 <br>
                 <br>
-                <td><input type="password" name="password" placeholder="password" id="username"></td>
+                <td><input type="password" name="password" placeholder="Password" id="username"></td>
                 <br>
                 <div class="background"></div>    
-                <td><a href="dashboard.php" ><button class="button" type="submit" name="login"> Login</button style="cursor: pointer;"></a></td>
+                <td><a href="index2.php?id=<?= $value ['id']?>" ><button class="button" type="submit" name="login"> Login</button style="cursor: pointer;"></a></td>
             </div>
             </div>
         </form>

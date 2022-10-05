@@ -1,3 +1,18 @@
+<?php 
+session_start();
+include 'conn.php';
+
+if(!isset($_SESSION["login"])){
+    header("Location: login.php");
+    exit;
+}
+
+$id = $_GET['id'];
+$sql = "SELECT * FROM profil WHERE id = '$id'";
+$query = mysqli_query($conn,$sql);
+$value = mysqli_fetch_assoc($query);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,10 +41,11 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link " href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Log in</a></li>
+                    <li class="nav-item"><a class="nav-link " href="index2.php?id=<?= $value['id']?>">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index2.php?id=<?= $value['id']?>">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index2.php?id=<?= $value['id']?>">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="logout.php">Log out</a></li>
+                        <li class="nav-item"><a class="nav-link" href='profil.php?id=<?= $value['id'] ?>'>Profile</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,18 +55,19 @@
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
-                        <form action="savecreate.php" method="post" enctype="multipart/form-data" style="position: relative; left: -28%;">
+                        <form action="savecreate.php?id=<?= $value ['id']?>" method="post" enctype="multipart/form-data" style="position: relative; left: -28%;">
+                        <h1 class="display-7 fw-semibold text-dark mb-4" style="position:relative; ">Formulir Pengajuan Keterlambatan</h1>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="namaSiswa" style="width: 160%;">
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="namaSiswa" style="width: 160%;" value="<?= $value['nama']?>">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Kelas</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" name="kelas" style="width: 160%;">
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="kelas" style="width: 160%;" value="<?= $value['kelas']?>">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">NISN</label>
-                                <input type="number" class="form-control" id="exampleInputPassword1" name="nisn" style="width: 160%;">
+                                <input type="number" class="form-control" id="exampleInputPassword1" name="nisn" style="width: 160%;" value="<?= $value['NISN']?>">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Jam Keterlambatan</label>

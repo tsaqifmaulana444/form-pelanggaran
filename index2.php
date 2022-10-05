@@ -1,6 +1,16 @@
 <?php 
 session_start();
 include "conn.php";
+if(!isset($_SESSION["login"])){
+    header("Location: login.php");
+    exit;
+}
+$id = $_GET['id'];
+$sql = "SELECT * FROM profil WHERE id = '$id'";
+$query = mysqli_query($conn,$sql);
+$value = mysqli_fetch_assoc($query);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -31,10 +41,11 @@ include "conn.php";
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#bks">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#fff">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.php">Log in</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page"  href="index2.php?id=<?= $value['id']?>">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index2.php?id=<?= $value['id']?>">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index2.php?id=<?= $value['id']?>">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="logout.php">Log out</a></li>
+                        <li class="nav-item"><a class="nav-link" href="profil.php?id=<?= $value['id']?>">Profile</a></li>
                     </ul>
                 </div>
             </div>
@@ -49,7 +60,7 @@ include "conn.php";
                             <p class="lead text-white-50 mb-4">Website resmi dari SMK Taruna Bhakti untuk pengajuan keterlambatan dan tata tertib di sekolah</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                 <a class="btn btn-dark btn-lg px-4 me-sm-3" href="#fff">Formulir Laporan</a>
-                                <a class="btn btn-outline-light btn-lg px-4" href="datapel.php">Daftar Peraturan</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="datapel.php?id=<?= $value['id']?>">Daftar Peraturan</a>
                             </div>
                         </div>
                     </div>
@@ -79,7 +90,7 @@ include "conn.php";
                 <div class="p" style="width: 47%;">
                     <h1 class="display-5 fw-bold text-dark mb-2" style="width: 100%;;">Ajukan keterlambatan mu</h1> 
                     <p class="lead text-dark-50 mb-4">Berikut ini adalah tombol yang menuju ke halaman pengajuan keterlambatan siswa SMK Taruna Bhakti</p>
-                    <a class="btn btn-outline-dark btn-lg px-4" href="formtelat.php" style="position: relative ; margin-top:7%;">Ajukan Keterlambatan</a>
+                    <a class="btn btn-outline-dark btn-lg px-4" href='formtelat.php?id=<?= $value['id'] ?>' style="position: relative ; margin-top:7%;">Ajukan Keterlambatan</a>
                 </div>
             </div>
         </section>

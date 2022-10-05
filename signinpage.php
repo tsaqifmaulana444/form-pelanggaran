@@ -20,6 +20,8 @@ require 'conn.php';
 
     <!-- link font -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
     <style>
         * {
             margin: 0;
@@ -99,9 +101,9 @@ require 'conn.php';
     <!-- image -->
     <div class="all">
        
-        <h1>Sign Up</h1>
-        <form action="signin2.php" method="post">
-            <table style="position: absolute; top:190px; left:400px;" >
+        <h1 style="position: absolute; top:11%; left:33%;" >Sign Up</h1>
+        <form action="signin.php" method="post">
+            <table style="position: absolute; top:18%; left:33%;" >
                 <tr>
                     <td>
                         <label for="name">Nama :</label>
@@ -151,15 +153,32 @@ require 'conn.php';
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
-                        <button type="submit" name="register" id="register" class="button" style="float:right;">Register</button>
+                    <td>
+                        <label for="gmail">Password :</label>
+                        </td>
+                    <td>
+                        <input type="password" name="password" id="gmail">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="gmail">Confirm Password :</label>
+                        </td>
+                    <td>
+                        <input type="password" name="password2" id="gmail">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a class="btn btn-primary" href="login.php" role="button">Back</a>
+                    </td>
+                    <td >
+                        <button type="submit" class="btn btn-success" name="register" id="register" style="float:right;">Register</button>
                     </td>
                 </tr>
             </table>
         </form>
-        <a href="dashboard.php" id="back">
-            <button type="submit" name="backlogin" id="backlogin" class="button " style="background-color: gold; margin-top:4.5% ">Back</button>
-        </a>
+       
     </div>
 </body>
 </html>
