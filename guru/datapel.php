@@ -25,6 +25,8 @@ $value = mysqli_fetch_assoc($query);
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" />
     <title>Starbhak Services - Daftar Pelanggaran</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">

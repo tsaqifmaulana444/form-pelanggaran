@@ -69,10 +69,10 @@ if(!isset($_SESSION["login"])){
                         <br>
                         <table>
                             <tr>
-                                <td>
+                                <td colspan="2">
                                     <p id="info" class="fs-1">Profil Guru</p>   
                                 </td>
-                                <td></td>
+                                
                             </tr>
                             <br>
                             <tr>

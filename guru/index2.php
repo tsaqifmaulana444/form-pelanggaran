@@ -56,7 +56,7 @@ $value = mysqli_fetch_assoc($query);
                             <h1 class="display-5 fw-bolder text-white mb-2">Selamat datang di Starbhak Services!</h1>
                             <p class="lead text-white-50 mb-4"><?= $value['nama'];?></p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                                <a class="btn btn-dark btn-lg px-4 me-sm-3" href="#fff">Formulir Laporan</a>
+                                <a class="btn btn-dark btn-lg px-4 me-sm-3" href="#fff">Terima Laporan</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="datapel.php?id=<?= $value['id']?>">Daftar Peraturan</a>
                             </div>
                         </div>
@@ -71,9 +71,9 @@ $value = mysqli_fetch_assoc($query);
                     <p class="text-dark fs-6">Gedung SMK Taruna Bhakti</p>
                 </div>
                 <div class="p" style="width: 47%;">
-                    <h1 class="display-5 fw-bold text-dark mb-2" style="width: 100%;;">Approve submission</h1> 
-                    <p class="lead text-dark-50 mb-4">Setujui formulir keterlambatan siswa melalui tombol dibawah ini</p>
-                    <a class="btn btn-outline-dark btn-lg px-4" href='formtelat.php?id=<?= $value['id'] ?>' style="position: relative ; margin-top:7%;">Approve submission</a>
+                    <h1 class="display-5 fw-bold text-dark mb-2" style="width: 100%;">Approve Student Report</h1> 
+                    <p class="lead text-dark-50 mb-4">Setujui laporan keterlambatan siswa melalui tombol dibawah ini</p>
+                    <a class="btn btn-outline-dark btn-lg px-4" href='formtelat.php?id=<?= $value['id'] ?>' style="position: relative ; margin-top:7%;">Approve Report</a>
                 </div>
             </div>
         </section>

@@ -25,6 +25,7 @@ if(!isset($_SESSION["login"])){
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 
     <title>Starbhak Services - Admin</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

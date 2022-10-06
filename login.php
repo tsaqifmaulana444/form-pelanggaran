@@ -3,7 +3,6 @@ session_start();
 
 require 'function.php';
 require 'conn.php';
-// belom bener di membawa id
 // $id = $_GET['id'];
 // $sql = "SELECT id FROM profil WHERE id = '$id'";
 // $query = mysqli_query($conn,$sql);
@@ -22,7 +21,7 @@ if(isset($_POST["login"])){
 
     if(mysqli_num_rows($result) === 1){
         $row = mysqli_fetch_array($result);
-        if (password_verify($password, $row["password"])){
+        if(password_verify($password, $row["password"])){
             // set session
             $_SESSION["login"] = true;
             header("Location: index2.php?id=$row[0]");
@@ -45,6 +44,8 @@ if(isset($_POST["login"])){
     </style>
     <!-- link font -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
 
 </head>
 <body>
@@ -59,7 +60,7 @@ if(isset($_POST["login"])){
             <div class="heading">
                 <h4>Welcome!</h4>
                 <h1>Login</h1>
-                <h5 style="margin-top: 5px;">Doesn't have account? <a href="signinpage.php">Sign in</a> <br></h5>
+                <h5 style="margin-top: 5px;">Doesn't have account? <a href="signinpage.php">Sign Up</a> <br></h5>
                 <h5 style="margin-top: 5px;">Or Log in as <a href="/form-pelanggaran/guru/login.php">Teacher</a> <br></h5>
             </div>
             <?php if(isset($error)) :?>

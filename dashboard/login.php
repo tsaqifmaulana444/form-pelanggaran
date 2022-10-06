@@ -35,6 +35,7 @@ if(isset($_POST["login"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starbhak Services - Admin Login </title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
     <!-- link font -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">

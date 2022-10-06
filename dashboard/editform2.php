@@ -23,6 +23,7 @@ if(!isset($_SESSION["login"])){
     <meta name="description" content="">
     <meta name="author" content="">
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
     <title>Starbhak Services - Admin</title>
 

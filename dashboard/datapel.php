@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylebar.css">
     <title>Sidebar Menu</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@500&display=swap');

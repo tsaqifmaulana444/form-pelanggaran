@@ -44,6 +44,7 @@ if(isset($_POST["login"])){
     </style>
     <!-- link font -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
 </head>
 <body>

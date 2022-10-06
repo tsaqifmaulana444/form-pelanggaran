@@ -1,10 +1,10 @@
 <?php 
 session_start();
 
-if(!isset($_SESSION["login"])){
-    header("Location: login.php");
-    exit;
-}
+// if(!isset($_SESSION["login"])){
+//     header("Location: login.php");
+//     exit;
+// }
 
 require 'function.php';
 require 'conn.php';
@@ -16,8 +16,8 @@ require 'conn.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starbhak Services - Admin Sign In</title>
-
+    <title>Starbhak Services - Sign In</title>
+    
     <!-- link font -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">

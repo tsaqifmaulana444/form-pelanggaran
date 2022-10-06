@@ -17,7 +17,7 @@ if(!isset($_SESSION["login"])){
     <meta name="author" content="">
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
     <title>Starbhak Services - Admin</title>
-
+    
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -26,7 +26,7 @@ if(!isset($_SESSION["login"])){
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="icon" href="000.png" >
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
 </head>
 
