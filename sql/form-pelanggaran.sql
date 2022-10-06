@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2022 at 04:14 AM
+-- Generation Time: Oct 06, 2022 at 05:41 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -46,6 +46,32 @@ INSERT INTO `admindb` (`id`, `kode_permit`, `username`, `password`, `gmail`) VAL
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `guru`
+--
+
+CREATE TABLE `guru` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `usia` int(11) NOT NULL,
+  `tanggalLahir` date NOT NULL,
+  `NIP` int(11) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `gmail` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `guru`
+--
+
+INSERT INTO `guru` (`id`, `nama`, `usia`, `tanggalLahir`, `NIP`, `password`, `gmail`) VALUES
+(129, 'Ria Dewi', 35, '1987-01-16', 21332326, '$2y$10$2F7rKRyuRZdG9QKqXEWsu.4hWyKkp2JgWgmjnWLdd2Bp4nK4JtqdC', 'riadewi@gmail.com'),
+(130, 'Siti Sri Subakti', 48, '1974-02-28', 913280821, '$2y$10$sJAPE0.vJ.cx2qg286ZISu7pVat2l5z5k3MkYWE9j6tKezUCUy912', 'sssubakti@gmail.com'),
+(131, 'Abdul Mustofa Aziz', 24, '1998-03-30', 12412131, '$2y$10$kmo3g4RiiOZ0Y9Tn2IdOfeybrR4fO/ayezRshN7wGNBJyc4zZ2MKi', 'wongbanyuwangi@gmail.com'),
+(132, 'Susanto Bambang Marto', 33, '1989-08-17', 70847361, '$2y$10$6hA7irIvL0ZZWqMnofjWSOiJz9hJpLNFiq317pCgn.40K00iGlAim', 'martoyono@gmail.com');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `keterlambatan`
 --
 
@@ -55,21 +81,18 @@ CREATE TABLE `keterlambatan` (
   `kelas` varchar(255) NOT NULL,
   `NISN` int(11) NOT NULL,
   `menitKeterlambatan` varchar(255) NOT NULL,
+  `tanggalTerlambat` date NOT NULL,
   `guruBk` varchar(255) NOT NULL,
-  `alasanKeterlambatan` text NOT NULL,
-  `total` int(11) NOT NULL
+  `alasanKeterlambatan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `keterlambatan`
 --
 
-INSERT INTO `keterlambatan` (`id`, `nama`, `kelas`, `NISN`, `menitKeterlambatan`, `guruBk`, `alasanKeterlambatan`, `total`) VALUES
-(1, 'Aldi Taher', 'X Animasi 2', 12325641, '12:59', 'Bapak Abdul', 'a', 1),
-(2, 'Aldi Taher', 'X Animasi 2', 12325641, '12:59', 'Bapak Abdul', 'a', 0),
-(3, 'Aldi Taher', 'X Animasi 2', 12325641, '12:59', 'Bapak Abdul', 'a', 1),
-(4, 'Aldi Taher', 'X Animasi 2', 12325641, '12:59', 'Bapak Abdul', 'a', 1),
-(5, 'Kevin Adicahyo', 'X TE 1', 12164321, '12:59', 'Bapak Abdul', 'Sakit ', 0);
+INSERT INTO `keterlambatan` (`id`, `nama`, `kelas`, `NISN`, `menitKeterlambatan`, `tanggalTerlambat`, `guruBk`, `alasanKeterlambatan`) VALUES
+(33, 'Aldi Taher', 'X Animasi 2', 12325641, '12:59', '2022-12-01', 'Abdul Mustofa Aziz', '1'),
+(34, 'Aldi Taher', 'X Animasi 2', 12325641, '12:59', '2022-06-01', 'Ria Dewi', '1');
 
 -- --------------------------------------------------------
 
@@ -122,12 +145,12 @@ CREATE TABLE `profil` (
 --
 
 INSERT INTO `profil` (`id`, `nama`, `usia`, `NISN`, `tanggalLahir`, `kelas`, `gmail`, `password`, `totalPelanggaran`, `poin`) VALUES
-(3, '1', '1', 1, '0000-00-00', '1', 'ajskxknz@gm', '$2y$10$tFER4Qe2/VWxscHYb.gy5OqlQBpPvVEwvG7VI1WAoAKW1CxjGMmJG', 0, 0),
-(4, '1', '1', 1, '2022-10-05', '1', 'wdfds@assa', '$2y$10$CC7QuvG0ifMEeu4Q8RoIwuTFlvJM32BrW2G2iT/b70B8uUdffXgWW', 0, 0),
 (5, '1', '1', 1, '2022-10-05', '1', 'wdfds@assa', '$2y$10$yx/iOwobOJRRgDL54Tuug..GycAQLYftWuaVYAX5LzI.SUSFQ0/qK', 0, 0),
 (113, '1', '1', 1, '2022-10-05', 'X TE 1', 'hr@gmail.com', '$2y$10$nUnaGB9MsNkCXwIMgubwyOKeUkEIwSjLp5etAVPjGKeCgCCULjAuS', 0, 0),
 (114, 'tes', '12', 12, '2022-10-05', 'X TE 1', '12df@df', '$2y$10$adAaCNSdQdvipciTMhTU8.hPlQd7OuW7ZnJFSM5Vvziywh.osH.G2', 0, 0),
-(115, 'Aldi Taher', '17', 12325641, '2022-10-05', 'X Animasi 2', 'aldi@gmail.com', '$2y$10$/41F0YZA9r3hn2Me0jOeS.ql5roII2P.YVbr5o2RoCGWb8pyfXpFi', 0, 0);
+(115, 'Aldi Taher', '17', 12325641, '2022-10-05', 'X Animasi 2', 'aldi@gmail.com', '$2y$10$/41F0YZA9r3hn2Me0jOeS.ql5roII2P.YVbr5o2RoCGWb8pyfXpFi', 0, 0),
+(116, 'Odi Wijoyo', '17', 12346631, '2006-12-05', 'X TE 1', 'wijoyoodi@gmail.com', '$2y$10$rp760HHstAUHe1l4Ngkqd.z1L7M5mdjPc.n7dVXnHaUZyCiKPH.U6', 0, 0),
+(117, 'ujang', '17', 485329342, '2022-02-01', '12 RPL 3', 'wdfds@assa', '$2y$10$6pt5Y3vCZ1MdF5dz6nXeA.szF9x7/WZR43pPONUS7MlmpljO9rm.K', 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -137,6 +160,12 @@ INSERT INTO `profil` (`id`, `nama`, `usia`, `NISN`, `tanggalLahir`, `kelas`, `gm
 -- Indexes for table `admindb`
 --
 ALTER TABLE `admindb`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `guru`
+--
+ALTER TABLE `guru`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -168,10 +197,16 @@ ALTER TABLE `admindb`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `guru`
+--
+ALTER TABLE `guru`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+
+--
 -- AUTO_INCREMENT for table `keterlambatan`
 --
 ALTER TABLE `keterlambatan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `pelanggaran`
@@ -183,7 +218,7 @@ ALTER TABLE `pelanggaran`
 -- AUTO_INCREMENT for table `profil`
 --
 ALTER TABLE `profil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

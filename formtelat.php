@@ -20,7 +20,7 @@ $value = mysqli_fetch_assoc($query);
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Starbhak Services - Home</title>
+        <title>Starbhak Services - Formulir</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -55,39 +55,44 @@ $value = mysqli_fetch_assoc($query);
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
-                        <form action="savecreate.php?id=<?= $value ['id']?>" method="post" enctype="multipart/form-data" style="position: relative; left: -28%;">
+                        <form action="savecreate.php" method="post" enctype="multipart/form-data" style="position: relative; left: -28%;">
                         <h1 class="display-7 fw-semibold text-dark mb-4" style="position:relative; ">Formulir Pengajuan Keterlambatan</h1>
+                            <input type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id" style="width: 160%;" value="<?= $value['id']?>">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="namaSiswa" style="width: 160%;" value="<?= $value['nama']?>">
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="namaSiswa" style="width: 160%;" value="<?= $value['nama']?>" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Kelas</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" name="kelas" style="width: 160%;" value="<?= $value['kelas']?>">
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="kelas" style="width: 160%;" value="<?= $value['kelas']?>" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">NISN</label>
-                                <input type="number" class="form-control" id="exampleInputPassword1" name="nisn" style="width: 160%;" value="<?= $value['NISN']?>">
+                                <input type="number" class="form-control" id="exampleInputPassword1" name="nisn" style="width: 160%;" value="<?= $value['NISN']?>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Tanggal Terlambat</label>
+                                <input type="date" class="form-control" id="exampleInputPassword1" name="tanggalTerlambat" style="width: 160%;" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Jam Keterlambatan</label>
-                                <input type="time" class="form-control" id="exampleInputPassword1" name="menitKeterlambatan" style="width: 160%;">
+                                <input type="time" class="form-control" id="exampleInputPassword1" name="menitKeterlambatan" style="width: 160%;" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Guru BK Yang Menangani</label>
-                            <select id="guruBk" name="guruBk" style="margin-left: 10px;">
-                                <option value="Bapak Abdul">Bapak Abdul</option>
-                                <option value="Ibu Ria">Ibu Ria</option>
-                                <option value="Ibu Bakti">Ibu Bakti</option>
-                                <option value="Bapak Santo">Bapak Santo</option>
+                            <select id="guruBk" name="guruBk" style="margin-left: 10px;" required>
+                                <option value="Abdul Mustofa Aziz">Bapak Abdul</option>
+                                <option value="Ria Dewi">Ibu Ria</option>
+                                <option value="Siti Sri Subakti">Ibu Bakti</option>
+                                <option value="Santo Bambang Sumarto">Bapak Santo</option>
                             </select>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Alasan Keterlambatan</label><br>
-                                <textarea name="alasanKeterlambatan" id="alasanKeterlambatan" cols="45" rows="6"></textarea>
+                                <textarea name="alasanKeterlambatan" id="alasanKeterlambatan" cols="45" rows="6" required></textarea>
                             </div>
                             
-                            <button type="submit" class="btn btn-success" name="submit">Tambahkan</button>
+                            <a href="index2.php?id=<?=$value['id']?>"><button type="submit" class="btn btn-success" name="submit">Tambahkan</button></a>
                         </form>
                     </div>
                 </div>

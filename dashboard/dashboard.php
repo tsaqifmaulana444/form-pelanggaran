@@ -59,6 +59,7 @@ if(!isset($_SESSION["login"])){
                         <a class="collapse-item" href="dashboard.php">Data Siswa Terlambat</a>
                         <a class="collapse-item" href="dashboard2.php">Data Pelanggaran</a>
                         <a class="collapse-item" href="dashboard3.php">Data Profil Siswa</a>
+                        <a class="collapse-item" href="dashboard4.php">Data Guru</a>
                     </div>
                 </div>
             </li>
@@ -78,6 +79,7 @@ if(!isset($_SESSION["login"])){
                        
                         <a class="collapse-item" href="create.php">Tambah Data Siswa</a>
                         <a class="collapse-item" href="create2.php">Tambah Data Pelanggaran</a>
+                        <a class="collapse-item" href="create3.php">Tambah Data Guru</a>
 
                 </div>
             </li>
@@ -182,9 +184,9 @@ if(!isset($_SESSION["login"])){
                                     <th scope="col">Kelas</th>
                                     <th scope="col">NISN</th>
                                     <th scope="col">Waktu Keterlambatan</th>
+                                    <th scope="col">Tanggal Terlambat</th>
                                     <th scope="col">Guru Bk Siswa</th>
                                     <th scope="col">Alasan Keterlambatan</th>
-                                    <th scope="col">Total</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -203,9 +205,9 @@ if(!isset($_SESSION["login"])){
                                 <td>$value[kelas]</td>
                                 <td>$value[NISN]</td>
                                 <td>$value[menitKeterlambatan]</td>
+                                <td>$value[tanggalTerlambat]</td>
                                 <td>$value[guruBk]</td>
                                 <td>$value[alasanKeterlambatan]</td>  
-                                <td>$value[total]</td>  
                                 <td>
                                     <a href='editform.php?id=".$value['id']."' style='color: #fff;'> <button type='button' class='btn btn-success'>Edit</button></a>
                                     <a href='delete.php?id=".$value['id']."' style='color: #fff;'> <button type='button' class='btn btn-danger'>Delete</button></a>

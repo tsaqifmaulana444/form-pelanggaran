@@ -1,15 +1,17 @@
-<?php 
-session_start();
+<?php
 include 'conn.php';
-$id = $_GET['id'];
-$sql = "SELECT * FROM keterlambatan WHERE id = '$id'";
-$query = mysqli_query($conn,$sql);
-$value = mysqli_fetch_assoc($query);
 
+session_start();
 if(!isset($_SESSION["login"])){
     header("Location: login.php");
     exit;
 }
+
+$id = $_GET['id'];
+$sql = "SELECT * FROM guru WHERE id = '$id'";
+$query = mysqli_query($conn,$sql);
+$value = mysqli_fetch_assoc($query);
+
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +48,7 @@ if(!isset($_SESSION["login"])){
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
                 <div class="sidebar-brand-text mx-3" style="text-transform: none;">Starbhak Services</div>
             </a>
 
@@ -81,15 +83,18 @@ if(!isset($_SESSION["login"])){
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Action:</h6>
+
+                        <h6 class="collapse-header">Action</h6>
                         <a class="collapse-item" href="create.php">Tambah Data Siswa</a>
                         <a class="collapse-item" href="create2.php">Tambah Data Pelanggaran</a>
                         <a class="collapse-item" href="create3.php">Tambah Data Guru</a>
+
                     </div>
                 </div>
             </li>
 
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -156,8 +161,8 @@ if(!isset($_SESSION["login"])){
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                               
-                                <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -173,49 +178,35 @@ if(!isset($_SESSION["login"])){
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Edit Data Produk</h1>
+                    <h1 class="h3 mb-4 text-gray-800" style="margin-top: 4%;">Tambah Data Guru</h1>
 
-                    <form action="edit.php" method="post" enctype="multipart/form-data">
+                    <!-- isi disini -->
+                    <form action="edit3.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id" value="<?= $value['id']?>">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label" style="display: none;">ID Produk</label>
-                            <input type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id" value="<?= $value['id']?>">
+                            <label for="exampleInputEmail1" class="form-label">Nama Guru</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="namaGuru" value="<?= $value['nama']?>">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nama" value="<?= $value['nama']?>">
+                            <label for="exampleInputPassword1" class="form-label">Usia</label>
+                            <input type="number" class="form-control" id="exampleInputPassword1" name="usia" value="<?= $value['usia']?>">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Kelas</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="kelas" value="<?= $value['kelas']?>">
+                            <label for="exampleInputPassword1" class="form-label">Tanggal Lahir</label>
+                            <input type="date" class="form-control" id="exampleInputPassword1" name="ttl" value="<?= $value['tanggalLahir']?>">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">NISN</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" name="nisn" value="<?= $value['NISN']?>">
+                            <label for="exampleInputPassword1" class="form-label">NIP</label>
+                            <input type="number" class="form-control" id="exampleInputPassword1" name="nip" value="<?= $value['NIP']?>">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Jam Keterlambatan</label>
-                            <input type="time" class="form-control" id="exampleInputPassword1" name="menitKeterlambatan" value="<?= $value['menitKeterlambatan']?>">
-                        </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Tanggal Terlambat</label>
-                            <input type="date" class="form-control" id="exampleInputPassword1" name="tanggalTerlambat" value="<?= $value['tanggalTerlambat']?>">
+                            <label for="exampleInputPassword1" class="form-label">Gmail</label>
+                            <input type="email" class="form-control" id="exampleInputPassword1" name="gmail" value="<?= $value['gmail']?>">
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Guru BK Yang Menangani</label>
-                            <select id="guruBk" name="guruBk" style="margin-left: 10px;">
-                                <option value="Bapak Abdul">Bapak Abdul</option>
-                                <option value="Ibu Ria">Ibu Ria</option>
-                                <option value="Ibu Bakti">Ibu Bakti</option>
-                                <option value="Bapak Santo">Bapak Santo</option>
-                        </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Alasan Keterlambatan</label>
-                            <br>
-                            <textarea name="alasanKeterlambatan" id="alasanKeterlambatan" cols="30" rows="6"><?= $value['alasanKeterlambatan'];?> </textarea>
-                        </div>                         
-                        <button type="submit" class="btn btn-primary" name="submit" >Tambahkan</button>
+                        <button type="submit" class="btn btn-primary" name="submit">Tambahkan</button>
                     </form>
+
                 </div>
                 <!-- /.container-fluid -->
 
@@ -242,7 +233,7 @@ if(!isset($_SESSION["login"])){
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
+                        <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>

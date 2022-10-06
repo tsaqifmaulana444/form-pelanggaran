@@ -59,6 +59,7 @@ if(!isset($_SESSION["login"])){
                         <a class="collapse-item" href="dashboard.php">Data Siswa Terlambat</a>
                         <a class="collapse-item" href="dashboard2.php">Data Pelanggaran</a>
                         <a class="collapse-item" href="dashboard3.php">Data Profil Siswa</a>
+                        <a class="collapse-item" href="dashboard4.php">Data Guru</a>
                     </div>
                 </div>
             </li>
@@ -76,6 +77,7 @@ if(!isset($_SESSION["login"])){
                         <h6 class="collapse-header" >Action</h6>
                         <a class="collapse-item" href="create.php">Tambah Data Siswa</a>
                         <a class="collapse-item" href="create2.php">Tambah Data Pelanggaran</a>
+                        <a class="collapse-item" href="create3.php">Tambah Data Guru</a>
                 </div>
             </li>
 

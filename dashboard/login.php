@@ -44,14 +44,17 @@ if(isset($_POST["login"])){
     padding: 0;
     font-family: 'Quicksand', sans-serif;
 }
+body{
+    background-color: #C4D7E0;
+}
 .login{
     width: 400px;
     height: 500px;
     border-radius: 15px;
-    background-color: rgb(201, 200, 200);
+    background-color:#B2C8DF;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 51%;
     transform: translate(-50%, -50%);
 }
 .judul1{

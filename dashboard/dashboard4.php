@@ -1,29 +1,21 @@
 <?php 
 session_start();
-include 'conn.php';
-$id = $_GET['id'];
-$sql = "SELECT * FROM keterlambatan WHERE id = '$id'";
-$query = mysqli_query($conn,$sql);
-$value = mysqli_fetch_assoc($query);
-
 if(!isset($_SESSION["login"])){
     header("Location: login.php");
     exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
+   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
-
     <title>Starbhak Services - Admin</title>
 
     <!-- Custom fonts for this template-->
@@ -34,6 +26,7 @@ if(!isset($_SESSION["login"])){
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="icon" href="000.png" >
 
 </head>
 
@@ -46,7 +39,7 @@ if(!isset($_SESSION["login"])){
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./landingpage/index.html    ">
                 <div class="sidebar-brand-text mx-3" style="text-transform: none;">Starbhak Services</div>
             </a>
 
@@ -81,11 +74,13 @@ if(!isset($_SESSION["login"])){
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Action:</h6>
+
+                        <h6 class="collapse-header" >Action</h6>
+                       
                         <a class="collapse-item" href="create.php">Tambah Data Siswa</a>
                         <a class="collapse-item" href="create2.php">Tambah Data Pelanggaran</a>
                         <a class="collapse-item" href="create3.php">Tambah Data Guru</a>
-                    </div>
+
                 </div>
             </li>
 
@@ -112,6 +107,8 @@ if(!isset($_SESSION["login"])){
                         <i class="fa fa-bars"></i>
                     </button>
 
+                    <!-- Topbar Search -->
+                  
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -156,7 +153,7 @@ if(!isset($_SESSION["login"])){
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                               
+                                    
                                 <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -173,49 +170,52 @@ if(!isset($_SESSION["login"])){
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Edit Data Produk</h1>
+                    <h1 class="h3 mb-4 text-gray-800" style="margin-top: 4%;">Data Siswa Terlambat</h1>
 
-                    <form action="edit.php" method="post" enctype="multipart/form-data">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label" style="display: none;">ID Produk</label>
-                            <input type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id" value="<?= $value['id']?>">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nama" value="<?= $value['nama']?>">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Kelas</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="kelas" value="<?= $value['kelas']?>">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">NISN</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" name="nisn" value="<?= $value['NISN']?>">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Jam Keterlambatan</label>
-                            <input type="time" class="form-control" id="exampleInputPassword1" name="menitKeterlambatan" value="<?= $value['menitKeterlambatan']?>">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Tanggal Terlambat</label>
-                            <input type="date" class="form-control" id="exampleInputPassword1" name="tanggalTerlambat" value="<?= $value['tanggalTerlambat']?>">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Guru BK Yang Menangani</label>
-                            <select id="guruBk" name="guruBk" style="margin-left: 10px;">
-                                <option value="Bapak Abdul">Bapak Abdul</option>
-                                <option value="Ibu Ria">Ibu Ria</option>
-                                <option value="Ibu Bakti">Ibu Bakti</option>
-                                <option value="Bapak Santo">Bapak Santo</option>
-                        </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Alasan Keterlambatan</label>
-                            <br>
-                            <textarea name="alasanKeterlambatan" id="alasanKeterlambatan" cols="30" rows="6"><?= $value['alasanKeterlambatan'];?> </textarea>
-                        </div>                         
-                        <button type="submit" class="btn btn-primary" name="submit" >Tambahkan</button>
-                    </form>
+
+                    <!-- isi disini -->
+                    <div class="bungkus" style="width: auto; height:450px; overflow: auto; ">
+                        <table class="table table-hover" style="margin-top: 5%;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Nama Guru</th>
+                                    <th scope="col">Usia</th>
+                                    <th scope="col">Tanggal Lahir</th>
+                                    <th scope="col">NIP</th>
+                                    <th scope="col">Gmail</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php 
+                            $i = 1;
+                            include 'conn.php';
+                            $sql = "SELECT * FROM guru";
+                            $query = mysqli_query($conn,$sql);
+                            while($value = mysqli_fetch_assoc($query)){    
+                            echo"
+                            <tr>
+                                <td>$i</td>
+                                <td>$value[id]</td>
+                                <td>$value[nama]</td>
+                                <td>$value[usia]</td>
+                                <td>$value[tanggalLahir]</td>
+                                <td>$value[NIP]</td>
+                                <td>$value[gmail]</td>  
+                                <td>
+                                    <a href='editform3.php?id=".$value['id']."' style='color: #fff;'> <button type='button' class='btn btn-success'>Edit</button></a>
+                                    <a href='delete3.php?id=".$value['id']."' style='color: #fff;'> <button type='button' class='btn btn-danger'>Delete</button></a>
+                                </td>
+                            </tr>";
+                            $i++;
+                        } 
+                    ?> 
+                        </table>
+                    </div>
+                    
+                    
                 </div>
                 <!-- /.container-fluid -->
 
@@ -242,7 +242,7 @@ if(!isset($_SESSION["login"])){
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
+                        <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>

@@ -77,9 +77,9 @@ include "conn.php";
                     <p class="text-dark fs-6">Gedung SMK Taruna Bhakti</p>
                 </div>
                 <div class="p" style="width: 47%;">
-                    <h1 class="display-5 fw-bold text-dark mb-2" style="width: 100%;;">Ajukan keterlambatan mu</h1> 
-                    <p class="lead text-dark-50 mb-4">Berikut ini adalah tombol yang menuju ke halaman pengajuan keterlambatan siswa SMK Taruna Bhakti</p>
-                    <a class="btn btn-outline-dark btn-lg px-4" href="formtelat.php" style="position: relative ; margin-top:7%;">Ajukan Keterlambatan</a>
+                    <h1 class="display-5 fw-bold text-dark mb-2" style="width: 100%;;">Laporkan keterlambatan mu</h1> 
+                    <p class="lead text-dark-50 mb-4">Berikut ini adalah tombol yang menuju ke halaman laporan keterlambatan siswa SMK Taruna Bhakti, Form ini wajib anda isi ketika anda datang terlambat ke SMK Taruna Bhakti</p>
+                    <a class="btn btn-outline-dark btn-lg px-4" href="formtelat.php" style="position: relative ; margin-top:7%;">Laporkan Keterlambatan</a>
                 </div>
             </div>
         </section>

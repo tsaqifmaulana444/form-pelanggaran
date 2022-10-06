@@ -1,7 +1,6 @@
 <?php 
 session_start();
 
-require 'function.php';
 require 'conn.php';
 // belom bener di membawa id
 // $id = $_GET['id'];
@@ -18,7 +17,7 @@ if(isset($_POST["login"])){
     $nama = $_POST["username"];
     $password = $_POST["password"];
 
-    $result = mysqli_query($conn, "SELECT * FROM profil WHERE nama = '$nama'");
+    $result = mysqli_query($conn, "SELECT * FROM guru WHERE nama = '$nama'");
 
     if(mysqli_num_rows($result) === 1){
         $row = mysqli_fetch_array($result);
@@ -48,7 +47,6 @@ if(isset($_POST["login"])){
 
 </head>
 <body>
-    <!-- image -->
         <form action="" method="post">
             <div class="login">
             <div class="judul1">
@@ -58,9 +56,8 @@ if(isset($_POST["login"])){
            
             <div class="heading">
                 <h4>Welcome!</h4>
-                <h1>Login</h1>
-                <h5 style="margin-top: 5px;">Doesn't have account? <a href="signinpage.php">Sign in</a> <br></h5>
-                <h5 style="margin-top: 5px;">Or Log in as <a href="/form-pelanggaran/guru/login.php">Teacher</a> <br></h5>
+                <h1>Login For Teacher</h1>
+                <h5 style="margin-top: 5px;">Or Login as <a href="../login.php">Student</a> <br></h5>
             </div>
             <?php if(isset($error)) :?>
                 <h2 style="color:red; position:absolute; top:77%; left:44%;">wrong password!</h2>

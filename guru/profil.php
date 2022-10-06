@@ -2,12 +2,12 @@
 session_start();
 include 'conn.php';
 $id = $_GET['id'];
-$sql = "SELECT * FROM profil WHERE id = '$id'";
+$sql = "SELECT * FROM guru WHERE id = '$id'";
 $query = mysqli_query($conn,$sql);
 $value = mysqli_fetch_assoc($query);
 
 if(!isset($_SESSION["login"])){
-    header("Location: index.php");
+    header("Location: login.php");
     exit;
 }
 ?>
@@ -18,7 +18,7 @@ if(!isset($_SESSION["login"])){
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Starbhak Services - Profile</title>
+        <title>Starbhak Services - Teacher Profile</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -48,13 +48,12 @@ if(!isset($_SESSION["login"])){
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container px-5">
-                <a class="navbar-brand" href="#!">Starbhak Services</a>
+                <a class="navbar-brand" href="#!">Starbhak Services Teacher</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link " href="index2.php?id=<?= $value['id']?>">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index2.php?id=<?= $value['id']?>">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index2.php?id=<?= $value['id']?>">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index2.php?id=<?= $value['id']?>">Form</a></li>
                         <li class="nav-item"><a class="nav-link" href="logout.php">Log out</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="">Profile</a></li>
                     </ul>
@@ -71,7 +70,7 @@ if(!isset($_SESSION["login"])){
                         <table>
                             <tr>
                                 <td>
-                                    <p id="info" class="fs-1">Profil Lengkap <?=$value ['nama'] ?></p>   
+                                    <p id="info" class="fs-1">Profil Guru</p>   
                                 </td>
                                 <td></td>
                             </tr>
@@ -85,29 +84,19 @@ if(!isset($_SESSION["login"])){
                                 <td><p class="fs-4"><?=$value ['usia'] ?></p></td>
                             </tr>
                             <tr>
-                                <td><p class="fs-4">NISN</td>
-                                <td><p class="fs-4"><?=$value ['NISN'] ?></p></td>
-                            </tr>
-                            <tr>
                                 <td><p class="fs-4">Tanggal Lahir :</td>
                                 <td><p class="fs-4"><?=$value ['tanggalLahir'] ?></p></td>
                             </tr>
                             <tr>
-                                <td><p class="fs-4">Kelas :</td>
-                                <td><p class="fs-4"><?=$value ['kelas'] ?></p></td>
+                                <td><p class="fs-4">NIP</td>
+                                <td><p class="fs-4"><?=$value ['NIP'] ?></p></td>
                             </tr>
+                          
                             <tr>
                                 <td><p class="fs-4">Gmail :</td>
                                 <td><p class="fs-4"><?=$value ['gmail'] ?></p></td>
                             </tr>
-                            <tr>
-                                <td><p class="fs-4">Total Pelanggaran Yang Dilakukan :</p></td>
-                                <td><p class="fs-4"><?=$value ['totalPelanggaran'] ?></p></td>
-                            </tr>
-                            <tr>
-                                <td><p class="fs-4">Poin Pelanggaran Siswa :</p></td>
-                                <td><p class="fs-4"><?=$value ['poin'] ?></p></td>
-                            </tr>
+                           
                         </table> 
                         <br> 
                         <a href="index2.php?id=<?= $value['id']?>" style="position: relative; left:-55%"><button type="button" class="btn btn-success">Kembali</button></a>
